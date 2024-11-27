@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { DesignationComponent } from "../designation/designation.component";
 import { RolesComponent } from "../roles/roles.component";
 

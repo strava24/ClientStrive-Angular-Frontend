@@ -16,6 +16,7 @@ export class RolesComponent {
 
   http = inject(HttpClient);
   roleList : IRole [] = [];
+  isLoader: boolean = true;
 
   ngOnInit(): void {
     this.getAllRoles();
@@ -24,6 +25,10 @@ export class RolesComponent {
   getAllRoles () {
     this.http.get("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles").subscribe((response : any) => {
         this.roleList = response.data;
+        this.isLoader = false;
+    },error => {
+      alert("Network Down!")
+      this.isLoader = false;
     });
   }
 

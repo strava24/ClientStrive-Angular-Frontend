@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class DesignationComponent implements OnInit {
 
   designationList : IDesignation [] = [];
+  isLoader: boolean = true;
 
   masterService = inject(MasterService);
 
@@ -20,8 +21,10 @@ export class DesignationComponent implements OnInit {
   ngOnInit(): void {
     this.masterService.getAllDesignation().subscribe((response : IResponse) => {
       this.designationList = response.data;
+      this.isLoader = false;
     },error => {
       alert("Network Down!")
+      this.isLoader = false;
     })
   }
 

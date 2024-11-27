@@ -1,19 +1,33 @@
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Role</th>
-        </tr>
-    </thead>
+<div class="row">
 
-    <tbody>
-        <tr *ngFor="let role of roleList">
-            <td>{{role.roleId}}</td>
-            <td>{{role.role}}</td>
-        </tr>
-    </tbody>
+    @if (isLoader) {
+        <div class="col-12 text-center">
+            <div class="spinner-border spinner-border-sm"></div>
+            <div class="spinner-grow spinner-grow-sm"></div>
+        </div>
+    }
+    @else {
+        <div class="ms-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    <tr *ngFor="let role of roleList">
+                        <td>{{role.roleId}}</td>
+                        <td>{{role.role}}</td>
+                    </tr>
+                </tbody>
+            
+            </table>
+        </div>
+    }
 
-</table>
+</div>
 
 <!-- <p>roles works!</p>
 

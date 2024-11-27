@@ -1,13 +1,23 @@
 <div class="row">
-    @for (item of designationList; track $index) {
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some example text. Some example text.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
+    @if (isLoader) {
+        <div class="col-12 text-center">
+            <div class="spinner-border spinner-border-sm"></div>
+            <div class="spinner-grow spinner-grow-sm"></div>
         </div>
+    } 
+    @else {
+        @for (item of designationList; track $index) {
+            <div class="col-3 ms-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">{{item.designation}}</h4>
+                        <p class="card-text">This designation has an Id of {{item.designationId}}</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+        }
     }
 </div>
 <!-- <p>{{firstName}}</p> -->

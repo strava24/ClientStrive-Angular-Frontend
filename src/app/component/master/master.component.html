@@ -7,9 +7,11 @@
     </div>
 </div>
 
-<app-roles *ngIf="currentComponent == 'Roles'"></app-roles>
+<div class="row pt-2">
+    <app-roles *ngIf="currentComponent == 'Roles'"></app-roles>
 
-<app-designation *ngIf="currentComponent == 'Designation'"></app-designation>
+    <app-designation *ngIf="currentComponent == 'Designation'"></app-designation>
+</div>
 
 <!-- <div class="row">
     <div class="col-12" *ngIf = "currentComponent == 'Roles'">
