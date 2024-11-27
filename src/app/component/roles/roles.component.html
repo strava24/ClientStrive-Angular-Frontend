@@ -1,0 +1,44 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let role of roleList">
+            <td>{{role.roleId}}</td>
+            <td>{{role.role}}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<!-- <p>roles works!</p>
+
+<div class="row">
+    <div class="col-3">
+        {{firstName}}
+    </div>
+    
+    <div class="col-3">
+        {{age}}
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-3">
+        <label for="name">Enter your name</label>
+        <input type="text" id="name" [(ngModel)] = "firstName">
+    </div>
+
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage()">{{text}}</button>
+    </div>
+
+</div>
+
+ -->
