@@ -1,1 +1,115 @@
-<p>client works!</p>
+<div class="row">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-primary">
+                Client List
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Company Name</th>
+                            <th>Person Name</th>
+                            <th>Contact No</th>
+                            <th>City</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody>
+                        @for (item of clientList; track $index) {
+                            <tr>
+                                <td>{{item.clientId}}</td>
+                                <td>{{item.companyName}}</td>
+                                <td>{{item.contactPersonName}}</td>
+                                <td>{{item.contactNo}}</td>
+                                <td>{{item.city}}</td>
+                                <td>
+                                    <button class="btn btn-success me-2" (click)="onEdit(item)">Edit</button>
+                                    <button class="btn btn-primary" (click)="deleteClient(item.clientId)">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-primary">
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="">Contact Person Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.contactPersonName">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">Company Name</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.companyName">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">Address</label>
+                        <textarea name="" id="" class="form-control" [(ngModel)]="clientObj.address"></textarea>
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">Contact No</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.contactNo">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">City</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.city">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">Pincode</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.pincode">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">State</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.state">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">Employee Strength</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.employeeStrength">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">GstNo</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.gstNo">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="">RegNo</label>
+                        <input type="text" class="form-control" [(ngModel)]="clientObj.regNo">
+                    </div>
+
+                </div>
+
+                <div class="row pt-2 text-center">
+                    <div class="col-6">
+                        <button class="btn btn-success">Reset</button>
+                    </div>
+
+                    <div class="col-6">
+                        <button class="btn btn-primary" (click)="onSave()">
+                            {{clientObj.clientId != 0 ? 'Update': 'Save'}}
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
