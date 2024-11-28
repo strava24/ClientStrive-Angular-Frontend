@@ -3,11 +3,13 @@ import { Client } from '../../model/class/Client';
 import { FormsModule } from '@angular/forms';
 import { ClientService } from '../../services/client.service';
 import { IResponse } from '../../model/interface/role';
+import { DatePipe } from '@angular/common';
+import { AlertComponent } from "../../reusableComponent/alert/alert.component";
 
 @Component({
   selector: 'app-client',
   standalone: true,
-  imports: [FormsModule, ],
+  imports: [FormsModule, DatePipe, AlertComponent],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css'
 })
@@ -15,6 +17,8 @@ export class ClientComponent implements OnInit {
   clientObj: Client = new Client();
   clientList: Client[] = [];
   clientService = inject(ClientService);
+
+  currentDate = new Date();
 
   ngOnInit(): void {
       this.getAllClients()
